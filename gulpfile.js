@@ -10,7 +10,7 @@ gulp.task('js-development', function () {
   return browserify('./source/js/app.jsx')
         .transform(reactify)
         .bundle()
-        .pipe(source('shopping-list.js'))
+        .pipe(source('example.js'))
         .pipe(gulp.dest('./build/js/'));
 });
 
@@ -18,7 +18,7 @@ gulp.task('js-production', function () {
   return browserify('./source/js/app.jsx')
         .transform(reactify)
         .bundle()
-        .pipe(source('shopping-list.js'))
+        .pipe(source('example.js'))
         .pipe(buffer())
         .pipe(uglify())
         .pipe(gulp.dest('./build/js/'));
