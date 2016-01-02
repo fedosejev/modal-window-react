@@ -21,11 +21,11 @@ var LoginForm = React.createClass({
 
               <div className="form-group">
                 <label htmlFor="email">Email address</label>
-                <input type="email" className="form-control" id="email" placeholder="Email" />
+                <input type="email" className="form-control" id="email" placeholder="Email" required />
               </div>
               <div className="form-group">
                 <label htmlFor="password">Password</label>
-                <input type="password" className="form-control" id="password" placeholder="Password" />
+                <input type="password" className="form-control" id="password" placeholder="Password" required />
               </div>
 
               <button type="submit" className="btn btn-default">Log in</button>
