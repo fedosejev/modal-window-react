@@ -1,6 +1,6 @@
 #!/bin/bash
 
-gulp build-production
+gulp build-for-production
 
 git add .
 git commit -m "Update"
