@@ -6,7 +6,7 @@ var reactify = require('reactify');
 var htmlMinifier = require('gulp-html-minifier');
 var uglify = require('gulp-uglify');
 
-gulp.task('js-development', function () {
+gulp.task('js-for-development', function () {
   return browserify('./source/js/app.jsx')
         .transform(reactify)
         .bundle()
@@ -14,7 +14,7 @@ gulp.task('js-development', function () {
         .pipe(gulp.dest('./build/js/'));
 });
 
-gulp.task('js-production', function () {
+gulp.task('js-for-production', function () {
   return browserify('./source/js/app.jsx')
         .transform(reactify)
         .bundle()
@@ -24,24 +24,24 @@ gulp.task('js-production', function () {
         .pipe(gulp.dest('./build/js/'));
 });
 
-gulp.task('html-development', function() {
+gulp.task('html-for-development', function() {
   return gulp.src('./source/*.html')
         .pipe(gulp.dest('./build'));
 });
 
-gulp.task('html-production', function() {
+gulp.task('html-for-production', function() {
   return gulp.src('./source/*.html')
         .pipe(htmlMinifier({collapseWhitespace: true}))
         .pipe(gulp.dest('./build'));
 });
 
 gulp.task('watch', function() {
-  gulp.watch('./source/js/**/*.jsx', ['js-development']);
-  gulp.watch('./source/js/**/*.js', ['js-development']);
-  gulp.watch('./source/**/*.html', ['html-development']);
+  gulp.watch('./source/js/**/*.jsx', ['js-for-development']);
+  gulp.watch('./source/js/**/*.js', ['js-for-development']);
+  gulp.watch('./source/**/*.html', ['html-for-development']);
 });
 
-gulp.task('build-development', ['js-development', 'html-development']);
-gulp.task('build-production', ['js-production', 'html-production']);
+gulp.task('build-for-development', ['js-for-development', 'html-for-development']);
+gulp.task('build-for-production', ['js-for-production', 'html-for-production']);
 
-gulp.task('default', ['watch', 'js-development', 'html-production']);
+gulp.task('default', ['watch', 'js-for-development', 'html-for-production']);
