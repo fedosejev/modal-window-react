@@ -2,6 +2,6 @@
 
 Example of how to render modal window with React.js.
 
-## Demo
+## Live
 
 http://fedosejev.github.io/modal-window-react/
